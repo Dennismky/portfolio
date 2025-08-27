@@ -22,7 +22,7 @@ function App() {
             <span>Dennis Kyalo</span>
           </div>
           <div className="links desktop-links">
-            {['Home', 'About', 'Skills', 'Services'].map((item) => (
+            {['Home', 'About', 'Skills', 'Services', 'Projects'].map((item) => (
               <div key={item} className="link">
                 <a href={`#${item.toLowerCase()}`}>{item}</a>
               </div>
@@ -38,7 +38,7 @@ function App() {
         </div>
         <div className={`dropdown ${isMenuOpen ? 'open' : ''}`}>
           <div className="links">
-            {['Home', 'About', 'Skills', 'Services', 'Blogs', 'Contact'].map((item) => (
+            {['Home', 'About', 'Skills', 'Services', 'Projects', 'Blogs', 'Contact'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -87,40 +87,66 @@ function App() {
       </section>
 
       <section id="about" className="about-section">
-  <div className="about-container">
-    <h2>About Me</h2>
-    <p>
-      I am <span className="highlight">Dennis Kyalo</span>, a frontend developer with backend knowledge.  
-      I specialize in clean, responsive, and user-friendly interfaces.  
-      Skilled at interactive maps, color schemes, debugging, and collaboration.  
-      I possess strong <span className="highlight">emotional intelligence</span>, allowing me to communicate effectively, work well in teams, and resolve conflicts constructively.  
-      Adaptable and proactive, I continuously learn new technologies and best practices to deliver innovative solutions.  
-      I thrive on solving complex problems, improving user experiences, and creating interfaces that are both visually appealing and highly functional.
-    </p>
+        <div className="about-container">
+          <h2>About Me</h2>
+          <p>
+            I am <span className="highlight">Dennis Kyalo</span>, a frontend developer with backend knowledge.  
+            I specialize in clean, responsive, and user-friendly interfaces.  
+            Skilled at interactive maps, color schemes, debugging, and collaboration.  
+            I possess strong <span className="highlight">emotional intelligence</span>, allowing me to communicate effectively, work well in teams, and resolve conflicts constructively.  
+            Adaptable and proactive, I continuously learn new technologies and best practices to deliver innovative solutions.  
+            I thrive on solving complex problems, improving user experiences, and creating interfaces that are both visually appealing and highly functional.
+          </p>
+        </div>
+      </section>
+
+      <section id="skills" className="skills-section">
+        <h2>Skills</h2>
+        <p>
+          HTML, CSS, Tailwind, React, JavaScript, SQL, Python, Node.js, Flask, REST APIs, Git/GitHub, CI/CD workflows, JWT authentication, custom error handling, environment configuration, user role management, route protection, data pagination, UI/UX design, responsive layouts, accessibility, debugging, problem-solving, teamwork, and effective communication.
+        </p>
+      </section>
+
+      <section id="services" className="services-section">
+        <h2>Services</h2>
+        <p>
+          I build <span className="highlight">responsive websites and web applications</span> with modern frontend frameworks.  
+          I create <span className="highlight">interactive and user-friendly interfaces</span>, implement maps, charts, and data visualizations, and optimize user experience through thoughtful UI/UX design.  
+          On the backend, I provide <span className="highlight">secure route handling, JWT authentication, custom error management, API integration, and efficient database solutions</span>.  
+          I also offer <span className="highlight">project planning, version control management, team collaboration, and CI/CD workflow support</span> to ensure smooth and scalable development.
+        </p>
+      </section>
+
+      <section id="projects" className="projects-section">
+  <h2>Projects</h2>
+  <div className="project-list">
+
+    <div className="project-item">
+      <h3>Jiseti</h3>
+      <p>A full-stack corruption-reporting platform with user/admin roles, JWT authentication, and media upload functionality.</p>
+      <p>Tech Stack: React, Tailwind CSS, Flask, PostgreSQL, JWT, Render, Netlify</p>
+      <p>
+        <a href="https://github.com/Dennismky/jiseti" target="_blank" rel="noreferrer">View the GitHub Repository</a> |  
+        <a href="https://jiseti.netlify.app/" target="_blank" rel="noreferrer">Visit the Frontend App</a> |  
+        <a href="https://jiseti-backend-4jth.onrender.com" target="_blank" rel="noreferrer">Check the Backend API</a>
+      </p>
+    </div>
+
+    <div className="project-item">
+      <h3>Fit App</h3>
+      <p>A gym member management application with CRUD operations, search, and filters.</p>
+      <p>Tech Stack: React, Tailwind CSS, Flask, SQLAlchemy</p>
+      <p>
+        <a href="https://github.com/Dennismky/fit-up.git" target="_blank" rel="noreferrer">View the GitHub Repository</a>
+        <a href="https://euphonious-cascaron-9220f3.netlify.app/" target="_blank" rel="noreferrer">Visit the Frontend App</a> |
+      </p>
+    </div>
+
+    
+
   </div>
 </section>
 
-     <section id="skills" className="skills-section">
-  <h2>Skills</h2>
-  <p>
-    I have expertise in <span className="highlight">HTML, CSS, Tailwind, React, JavaScript, SQL, and Python</span>.  
-    I am proficient with <span className="highlight">Node.js, Flask, REST APIs, Git/GitHub, version control, and CI/CD workflows</span>.  
-    I have experience with <span className="highlight">JWT authentication, custom error handling, environment configuration, user role management, route protection, and data pagination</span>.  
-    Additionally, I possess <span className="highlight">UI/UX design skills, responsive layouts, accessibility best practices, debugging, problem-solving, teamwork, and effective communication</span>.
-  </p>
-</section>
-
-
-
-      <section id="services" className="services-section">
-  <h2>Services</h2>
-  <p>
-    I build <span className="highlight">responsive websites and web applications</span> with modern frontend frameworks like React and Tailwind CSS.  
-    I create <span className="highlight">interactive and user-friendly interfaces</span>, implement maps, charts, and data visualizations, and optimize user experience through thoughtful UI/UX design.  
-    On the backend, I provide <span className="highlight">secure route handling, JWT authentication, custom error management, API integration, and efficient database solutions</span>.  
-    I also offer <span className="highlight">project planning, version control management, team collaboration, and CI/CD workflow support</span> to ensure smooth and scalable development.
-  </p>
-</section>
 
 
       <section id="contact" className="contact-section">
