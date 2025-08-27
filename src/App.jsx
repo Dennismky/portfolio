@@ -1,34 +1,150 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
+import githubLogo from "./assets/github.png"
+import linkedinLogo from "./assets/linkedin.png"
+import twitterLogo from "./assets/twitter.png"
+import gmailLogo from "./assets/gmail.png"
+import phoneLogo from "./assets/phone.png"
+import profileImage from "./assets/image.jpeg"
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="portfolio">
+
+      <nav className="navbar">
+        <div className="nav-container">
+          <div className="logo">
+            <span>Dennis Kyalo</span>
+          </div>
+          <div className="links desktop-links">
+            {['Home', 'About', 'Skills', 'Services'].map((item) => (
+              <div key={item} className="link">
+                <a href={`#${item.toLowerCase()}`}>{item}</a>
+              </div>
+            ))}
+            <div className="link contact-btn">
+              <a href="#contact">Contact</a>
+            </div>
+          </div>
+          <i 
+            className="fa-solid fa-bars hamburg" 
+            onClick={toggleMenu}
+          ></i>
+        </div>
+        <div className={`dropdown ${isMenuOpen ? 'open' : ''}`}>
+          <div className="links">
+            {['Home', 'About', 'Skills', 'Services', 'Blogs', 'Contact'].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item}
+              </a>
+            ))}
+            <i 
+              className="fa-solid fa-xmark cancel" 
+              onClick={() => setIsMenuOpen(false)}
+            ></i>
+          </div>
+        </div>
+      </nav>
+
+      <section id="home" className="main-section">
+        <div className="main-container">
+          <div className="image">
+            <img src={profileImage} alt="Dennis Kyalo" />
+          </div>
+          <div className="content">
+            <h1>Hey I'm <span>Dennis</span></h1>
+            <p>
+              A passionate frontend developer with strong backend knowledge. 
+              I focus on creating clean user interfaces, smooth user experiences, 
+              and functional applications. I have a good eye for colors, debugging, 
+              and I work well with others.
+            </p>
+            <div className="social-links">
+              <a href="https://github.com/Dennismky" target="_blank" rel="noreferrer">
+                <img src={githubLogo} alt="GitHub" style={{ width: "30px" }} />
+              </a>
+              <a href="https://www.linkedin.com/in/dennis-kyalo-69216b241/" target="_blank" rel="noreferrer">
+                <img src={linkedinLogo} alt="LinkedIn" style={{ width: "30px" }} />
+              </a>
+              <a href="mailto:kyalodennis1738@gmail.com">
+                <img src={gmailLogo} alt="Email" style={{ width: "30px" }} />
+              </a>
+              <a href="https://x.com/kdennis1738" target="_blank" rel="noreferrer">
+                <img src={twitterLogo} alt="Twitter / X" style={{ width: "30px" }} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="about-section">
+  <div className="about-container">
+    <h2>About Me</h2>
+    <p>
+      I am <span className="highlight">Dennis Kyalo</span>, a frontend developer with backend knowledge.  
+      I specialize in clean, responsive, and user-friendly interfaces.  
+      Skilled at interactive maps, color schemes, debugging, and collaboration.  
+      I possess strong <span className="highlight">emotional intelligence</span>, allowing me to communicate effectively, work well in teams, and resolve conflicts constructively.  
+      Adaptable and proactive, I continuously learn new technologies and best practices to deliver innovative solutions.  
+      I thrive on solving complex problems, improving user experiences, and creating interfaces that are both visually appealing and highly functional.
+    </p>
+  </div>
+</section>
+
+     <section id="skills" className="skills-section">
+  <h2>Skills</h2>
+  <p>
+    I have expertise in <span className="highlight">HTML, CSS, Tailwind, React, JavaScript, SQL, and Python</span>.  
+    I am proficient with <span className="highlight">Node.js, Flask, REST APIs, Git/GitHub, version control, and CI/CD workflows</span>.  
+    I have experience with <span className="highlight">JWT authentication, custom error handling, environment configuration, user role management, route protection, and data pagination</span>.  
+    Additionally, I possess <span className="highlight">UI/UX design skills, responsive layouts, accessibility best practices, debugging, problem-solving, teamwork, and effective communication</span>.
+  </p>
+</section>
+
+
+
+      <section id="services" className="services-section">
+  <h2>Services</h2>
+  <p>
+    I build <span className="highlight">responsive websites and web applications</span> with modern frontend frameworks like React and Tailwind CSS.  
+    I create <span className="highlight">interactive and user-friendly interfaces</span>, implement maps, charts, and data visualizations, and optimize user experience through thoughtful UI/UX design.  
+    On the backend, I provide <span className="highlight">secure route handling, JWT authentication, custom error management, API integration, and efficient database solutions</span>.  
+    I also offer <span className="highlight">project planning, version control management, team collaboration, and CI/CD workflow support</span> to ensure smooth and scalable development.
+  </p>
+</section>
+
+
+      <section id="contact" className="contact-section">
+        <h2>Contact Me</h2>
+        <div className="social-links">
+          <a href="mailto:kyalodennis1738@gmail.com">
+            <img src={gmailLogo} alt="Email" style={{ width: "30px" }} />
+          </a>
+          <a href="https://x.com/kdennis1738" target="_blank" rel="noreferrer">
+            <img src={twitterLogo} alt="Twitter / X" style={{ width: "30px" }} />
+          </a>
+          <a href="https://github.com/Dennismky" target="_blank" rel="noreferrer">
+            <img src={githubLogo} alt="GitHub" style={{ width: "30px" }} />
+          </a>
+          <a href="https://www.linkedin.com/in/dennis-kyalo-69216b241/" target="_blank" rel="noreferrer">
+            <img src={linkedinLogo} alt="LinkedIn" style={{ width: "30px" }} />
+          </a>
+          <div className="phone-contact">
+            <img src={phoneLogo} alt="Phone" style={{ width: "30px", marginRight: "8px" }} />
+            <span>+254746906609</span>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }
 
